@@ -51,8 +51,8 @@ class OrderController(val kafkaTemplate: KafkaTemplate<String, String>) {
             basket.refreshTotalDiscount()
             val totalPriceBeforeDiscount = NumberFormat.getCurrencyInstance().format(basket.totalPriceBeforeDiscount)
 
-            val totalPriceAfterDiscount = NumberFormat.getCurrencyInstance().format(basket.totalPriceAfterDiscount)
-            val totalDiscount = NumberFormat.getCurrencyInstance().format(basket.totalDiscount)
+            val totalPriceAfterDiscount = NumberFormat.getCurrencyInstance().format(basket.totalDiscount)
+            val totalDiscount = NumberFormat.getCurrencyInstance().format(basket.totalPriceAfterDiscount)
 
             orderResponse.items = items
             orderResponse.totalPrice = totalPriceBeforeDiscount
